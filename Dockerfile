@@ -1,5 +1,5 @@
 FROM centos:centos6
-RUN yum update
+RUN yum -y update
 RUN yum -y install openssh-server
 RUN service sshd start
 RUN chkconfig sshd on

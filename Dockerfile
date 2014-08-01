@@ -6,7 +6,7 @@ RUN chkconfig sshd on
 
 # Add vagrant user and key (with uid 1000 to match Ubuntu for syncing)
 RUN yum -y install sudo
-RUN groupadd vagrant
+RUN groupadd vagrant -g 1000
 RUN useradd --create-home -s /bin/bash vagrant -g wheel -G vagrant -u 1000
 
 # Allow sudo over SSH without tty (for vagrant)

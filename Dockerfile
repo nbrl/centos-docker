@@ -14,6 +14,7 @@ RUN sed -i 's/^Defaults[ \t]\+requiretty//' /etc/sudoers
 
 # Install things you would expect to be installed already
 RUN yum -y install git tar rsync
+RUN yum -y groupinstall "Development Tools"
 
 # Configure SSH access.
 RUN mkdir -p /home/vagrant/.ssh

@@ -19,8 +19,8 @@ RUN yum -y groupinstall "Development Tools"
 # Configure SSH access.
 RUN mkdir -p /home/vagrant/.ssh
 RUN curl https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub > /home/vagrant/.ssh/authorized_keys
-RUN chown -R vagrant:vagrant /home/vagrant
 RUN echo -n 'vagrant:vagrant' | chpasswd
+RUN chown -R vagrant:vagrant /home/vagrant
 
 # Enable passwordless sudo for users in the "sudo" group, i.e. vagrant.
 RUN echo 'vagrant ALL = NOPASSWD: ALL' > /etc/sudoers.d/vagrant

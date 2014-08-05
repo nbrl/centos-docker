@@ -1,4 +1,5 @@
 FROM centos:centos6
+RUN rpm --import https://fedoraproject.org/static/0608B895.txt && rpm -Uvh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 RUN yum -y update
 RUN yum -y install openssh-server
 RUN service sshd start
